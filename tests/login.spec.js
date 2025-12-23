@@ -16,6 +16,7 @@ test('TC-01: Verify successful login with valid credentials', async ({ page }) =
   await expect(page.getByRole('link', { name: 'My account' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Log out' })).toBeVisible();
 });
+
 test('TC-02: Verify login with invalid password', async ({ page }) => {
   const validEmail = 'test@example.com';
   const invalidPassword = 'wrongpassword';
@@ -25,6 +26,7 @@ test('TC-02: Verify login with invalid password', async ({ page }) => {
   
   await expect(page.getByText('Login was unsuccessful. Please correct the errors and try again.')).toBeVisible();
 });
+
 test('TC-03: Verify login with unregistered email', async ({ page }) => {
   const invalidEmail = 'nonexistent@example.com';
   const password = 'Password123!';
